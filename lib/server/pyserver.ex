@@ -19,7 +19,7 @@ defmodule Server.Pyserver do
   def init(:ok) do
     _pwd = File.cwd!()
     system_python = get_python()
-    Logger.log("Will start python server on port #{@pyport}")
+    Logger.info("Will start python server on port #{@pyport}")
     spawn fn -> System.cmd(system_python, [Path.join([:code.priv_dir(:expyplot), @pyserver_location]), Integer.to_string(@pyport)]) end
     {:ok, %{}}
   end
