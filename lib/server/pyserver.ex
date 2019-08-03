@@ -27,7 +27,7 @@ defmodule Server.Pyserver do
       _ -> spawn fn -> System.cmd(python3, ls) end
     end
     Logger.info("Waiting ...")
-    Process.sleep(1000)
+    Process.sleep(200)
     is_alive = Process.alive?(pid)
     Logger.info("Wait done. Is alive? #{is_alive}")
     {:ok, %{}}
