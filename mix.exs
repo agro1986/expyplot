@@ -1,12 +1,12 @@
 defmodule Expyplot.Mixfile do
   use Mix.Project
 
-  @version "1.1.3"
+  @version "1.2.2"
 
   def project do
     [app: :expyplot,
      version: @version,
-     elixir: "~> 1.8",
+     elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps(),
@@ -37,10 +37,9 @@ defmodule Expyplot.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:erlport, "~> 0.9"},
       {:statistics, "~> 0.4.1"},
-      {:earmark, "~> 1.3.2"},
-      {:ex_doc, "~> 0.20.2"},
+      {:earmark, "~> 0.1"},
+      {:ex_doc, "~> 0.11"},
     ]
   end
 
