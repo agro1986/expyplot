@@ -22,7 +22,7 @@ defmodule Server.Pyserver do
     Logger.info("Will start python server on port #{@pyport}")
     pid = spawn fn -> System.cmd(system_python, [Path.join([:code.priv_dir(:expyplot), @pyserver_location]), Integer.to_string(@pyport)]) end
     Logger.info("Waiting ...")
-    Process.sleep(100)
+    Process.sleep(2000)
     is_alive = Process.alive?(pid)
     Logger.info("Wait done. Is alive? #{is_alive}")
     {:ok, %{}}
